@@ -9,7 +9,7 @@ import (
 type Route struct {
 	Name        string
 	Method      string
-	Patter      string
+	Pattern     string
 	HandlerFunc http.HandlerFunc
 }
 type Routes []Route
@@ -20,7 +20,7 @@ func NewRouter() *mux.Router {
 	for _, route := range routes {
 		router.
 			Methods(route.Method).
-			Path(route.Patter).
+			Path(route.Pattern).
 			Name(route.Name).
 			Handler(route.HandlerFunc)
 	}
